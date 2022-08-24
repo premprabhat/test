@@ -4,7 +4,7 @@ type: docs
 hide_summary: true
 weight: 2
 description: >
-    Learning path for software developers about how to insatll, use and test on ARM64 AWS instance.
+    Learning path for software developers about how to install, setup a basice file server, reverse proxy and an API gateway and test with wrk2 on ARM64 AWS instance.
 ---
 
 ## Learning Objectives 
