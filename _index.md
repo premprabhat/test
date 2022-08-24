@@ -31,6 +31,8 @@ By the end of this learning path, you will be able to:
 
 ## Section 2
 
+|          Type | Content                       |
+| ---           | ---                                 |
 | How-To        | [Setup basic static file server](/content/en/cloud/clair/distributed_clair.md)
 | How-To        | [Setup a reverse proxy](/content/en/cloud/clair/vulnerability_report.md)
 | How-To        | [Setup an API gateway](/content/en/cloud/clair/distributed_clair.md) |
