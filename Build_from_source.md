@@ -33,12 +33,6 @@ NOTE: The below mentioned steps are used to build Nginx from source.
 wget https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.39/pcre2-10.39.zip
 unzip pcre2-10.39.zip
 ```
-* Download and extract the source code of PCRE from [here](http://www.pcre.org/). The rest is done by nginx’s ./configure and make:
-
-```console
-wget https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.39/pcre2-10.39.zip
-unzip pcre2-10.39.zip
-```
 
 * The zlib library distribution (version 1.1.3 — 1.2.11) needs to be downloaded from the [zlib](https://zlib.net/fossils/) site and extracted. The rest is done by nginx’s ./configure and make:
 
