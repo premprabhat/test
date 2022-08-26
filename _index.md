@@ -27,7 +27,7 @@ By the end of this learning path, you will be able to:
 |          Type | Content                       |
 | ---           | ---                                 |
 | How-To        | [Install Nginx from package](/content/en/cloud/clair/clair.md)
-| How-To        | [Build Nginx from source](/content/en/cloud/clair/combo_clair.md) |
+| How-To        | [Build Nginx from source](/Build_from_source.md) |
 
 ## Section 2
 
