@@ -41,7 +41,7 @@ wget https://zlib.net/fossils/zlib-1.2.11.tar.gz
 tar -xvf zlib-1.2.11.tar.gz
 ```
 
-* Clone the source code:
+* Clone the Nignix source code:
 
 ```console
 hg clone http://hg.nginx.org/nginx
