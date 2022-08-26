@@ -21,20 +21,19 @@ Then follow [this documentation](http://nginx.org/en/docs/configure.html) to bui
 
 ### Steps in brief
 
-NOTE: The below mentioned steps are used to build install Nginx from source.
+NOTE: The below mentioned steps are used to build Nginx from source.
 
-* Download Clair v4.4.4:
+* Clone the source code:
 
 ```console
-wget https://github.com/quay/clair/releases/download/v4.4.4/clair-v4.4.4.tar.gz
-tar -xvf clair-v4.4.4.tar.gz
+hg clone http://hg.nginx.org/nginx
+cd nginx/
 ```
 
-* We will setup a postgres database for Clair to store all the vulnerabilities specific to containers. docker-compose.yaml already has a target "clair-database" to setup a postgres database for Clair. For the combo mode, since postgres service will run inside a private container network and Clair service runs on localhost, we are required to expose postgres port 5432 to localhost. To do so, simply add the following to "clair-database" target in docker-compose.yaml file.
+* The Build is configured using configure command. It defines various aspects of the system, including the methods nginx is allowed to use for connection processing. At the end it creates a Makefile.
 
 ```console
-ports:
-      - "5432:5432"
+./auto/configure --sbin-path=/usr/local/nginx/nginx --conf-path=/usr/local/nginx/nginx.conf --pid-path=/usr/local/nginx/nginx.pid --with-http_ssl_module --with-pcre=../pcre2-10.39 --with-zlib=../zlib-1.2.11
 ```
 
 Next, setup the postgres service as below:
