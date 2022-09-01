@@ -1,83 +1,70 @@
 ---
 processors : ["Neoverse-N1"]
 software : ["linux"]
-title: "Build Nginx from source"
+title: "Run a test with wrk2"
 type: docs
 weight: 4
 hide_summary: true
 description: >
-    Learn how to build Nginx from source.
+    Learn how to run a test with wrk2.
 ---
 
 ## Pre-requisites
 
 * An Amazon Web Services(AWS) account.
-* Install wget, unzip, mercurial using command 
-```console
-apt-get install wget unzip mercurial -y
-```
+* Create a [reverse proxy/API Gateway](/reverse_proxy.md)
+* Create a [file server](/Basic_static_file_server.md)
 
 ## Build Nginx from source
 
-Using your AWS Account, launch an ARM 64-bit instance running Ubuntu.
+Using your AWS Account, launch an ARM 64-bit instance running with type M5.16XLarge and Ubuntu 18.04 AMI.
 
-Then follow [this documentation](http://nginx.org/en/docs/configure.html) to build Nginx from source.
+Then follow [this documentation](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/guidelines-for-deploying-nginx-plus-on-aws.pdf) to build Nginx from source.
 
 ### Steps in brief
 
-NOTE: The below mentioned steps are used to build Nginx from source.
+NOTE: The below mentioned steps are used to run a test with wrk2.
 
-* Download and extract the source code of PCRE from [here](http://www.pcre.org/). The rest is done by nginx’s ./configure and make:
+* Run the following commands on the upstreams to generate the files that will be served:
 
 ```console
-wget https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.39/pcre2-10.39.zip
-unzip pcre2-10.39.zip
+# Create 1kb file in RP use case directory
+dd if=/dev/urandom of=/usr/share/nginx/html/1kb bs=1024 count=1
+#Create 5kb file in RP use case directory
+dd if=/dev/urandom of=/usr/share/nginx/html/5kb bs=1024 count=5
+#Create 10kb file in RP use case directory
+dd if=/dev/urandom of=/usr/share/nginx/html/10kb bs=1024 count=10
+
+# Copy files into the APIGW use case directory
+mkdir -p /usr/share/nginx/html/api_new
+cp /usr/share/nginx/html/1kb /usr/share/nginx/html/api_new
+cp /usr/share/nginx/html/5kb /usr/share/nginx/html/api_new
+cp /usr/share/nginx/html/10kb /usr/share/nginx/html/api_new
 ```
 
-* The zlib library distribution (version 1.1.3 — 1.2.11) needs to be downloaded from the [zlib](https://zlib.net/fossils/) site and extracted. The rest is done by nginx’s ./configure and make:
+* Build the wrk2 HTTP benchmark:
 
 ```console
-wget https://zlib.net/fossils/zlib-1.2.11.tar.gz
-tar -xvf zlib-1.2.11.tar.gz
-```
-
-* Clone the Nignix source code:
-
-```console
-hg clone http://hg.nginx.org/nginx
-cd nginx/
-```
-
-* Install the following dependecies:
-
-```console
-apt-get install gcc libssl-dev make -y
-```
-
-* The Build is configured using configure command. It defines various aspects of the system, including the methods nginx is allowed to use for connection processing. At the end it creates a Makefile.
-
-```console
-./auto/configure --sbin-path=/usr/local/nginx/nginx --conf-path=/usr/local/nginx/nginx.conf --pid-path=/usr/local/nginx/nginx.pid --with-http_ssl_module --with-pcre=../pcre2-10.39 --with-zlib=../zlib-1.2.11
-```
-There are many configuration options available in NGINX, you can use it as per your need. To find all the configuration options available in NGINX check [here](http://nginx.org/en/docs/configure.html).
-
-After configuration, nginx is compiled and installed using make:
-
-```console
+sudo apt update
+sudo apt install -y make gcc zlib1g-dev libssl-dev
+git clone https://github.com/giltene/wrk2
+cd wrk2
 make
-make install
 ```
 
-* Now set Nignix in your path:
+* Reverse-Proxy Test Commands:
 
 ```console
-export PATH=/usr/local/nginx:$PATH
+./wrk --rate 10000000000 -t 64 -c 640 -d 60s https://<rp_apigw_ip_dns>/1kb
 ```
+Here <rp_apigw_ip_dns> is the private IP or DNS name of the Reverse Proxy/API Gateway instances that is to be tested
 
-* To verify if Nignix is insatlled or not check the Nignix version by using the command :
+* API Gateway Commands:
+For the APIGW test, we use the same command as the RP test case, but with a different
+URL (one that will be rewritten). Below is an example command for testing with a 1kb file:
 
 ```console
-nginx -v
+./wrk --rate 10000000000 -t 64 -c 640 -d 60s https://<rp_apigw_ip_dns>/api_old/1kb
 ```
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
