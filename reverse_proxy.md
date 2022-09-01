@@ -1,21 +1,18 @@
 ---
 processors : ["Neoverse-N1"]
 software : ["linux"]
-title: "Build Nginx from source"
+title: "Setup Reverse Proxy and API Gateway"
 type: docs
 weight: 4
 hide_summary: true
 description: >
-    Learn how to build Nginx from source.
+    Learn how to setup Reverse Proxy and API Gateway.
 ---
 
 ## Pre-requisites
 
 * An Amazon Web Services(AWS) account.
-* Install wget, unzip, mercurial using command 
-```console
-apt-get install wget unzip mercurial -y
-```
+* Install Nginx Plus. Steps can be found [<-- here](/Install_nginx_plus.md)
 
 ## Build Nginx from source
 
