@@ -1,80 +1,85 @@
 ---
 processors : ["Neoverse-N1"]
 software : ["linux"]
-title: "Build Nginx from source"
+title: "Install Nginx Plus"
 type: docs
 weight: 4
 hide_summary: true
 description: >
-    Learn how to build Nginx from source.
+    Learn how to install Nginx Plus.
 ---
 
 ## Pre-requisites
 
 * An Amazon Web Services(AWS) account.
-* Install wget, unzip, mercurial using command 
-```console
-apt-get install wget unzip mercurial -y
-```
+* An NGINX Plus subscription (purchased or trial)
+* root privilege
+* Your credentials to the [MyF5 Customer Portal](https://account.f5.com/myf5), provided by email from F5, Inc.
+* Your NGINX Plus certificate and public key (nginx-repo.crt and nginx-repo.key files), provided by email from F5, Inc.
 
-## Build Nginx from source
+## Install Nginx Plus
 
 Using your AWS Account, launch an ARM 64-bit instance running Ubuntu.
 
-Then follow [this documentation](http://nginx.org/en/docs/configure.html) to build Nginx from source.
+Then follow [this documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-plus/) to install Nginx Plus.
 
 ### Steps in brief
 
-NOTE: The below mentioned steps are used to build Nginx from source.
+NOTE: The below mentioned steps are used to install Nginx Plus.
 
-* Download and extract the source code of PCRE from [here](http://www.pcre.org/). The rest is done by nginx’s ./configure and make:
-
-```console
-wget https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.39/pcre2-10.39.zip
-unzip pcre2-10.39.zip
-```
-
-* The zlib library distribution (version 1.1.3 — 1.2.11) needs to be downloaded from the [zlib](https://zlib.net/fossils/) site and extracted. The rest is done by nginx’s ./configure and make:
+* Create the /etc/ssl/nginx directory:
 
 ```console
-wget https://zlib.net/fossils/zlib-1.2.11.tar.gz
-tar -xvf zlib-1.2.11.tar.gz
+sudo mkdir /etc/ssl/nginx
+cd /etc/ssl/nginx
 ```
 
-* Clone the Nignix source code:
+* Log in to MyF5 Customer Portal and download your nginx-repo.crt and nginx-repo.key files.
+
+* Copy the files to the /etc/ssl/nginx/ directory:
 
 ```console
-hg clone http://hg.nginx.org/nginx
-cd nginx/
+sudo cp nginx-repo.crt /etc/ssl/nginx/
+sudo cp nginx-repo.key /etc/ssl/nginx/
 ```
 
-* Install the following dependecies:
+* Install the prerequisites packages:
 
 ```console
-apt-get install gcc libssl-dev make -y
+sudo apt-get install apt-transport-https lsb-release ca-certificates wget gnupg2 ubuntu-keyring
 ```
 
-* The Build is configured using configure command. It defines various aspects of the system, including the methods nginx is allowed to use for connection processing. At the end it creates a Makefile.
+* Download and add [NGINX signing key](https://nginx.org/keys/nginx_signing.key?_ga=2.189873707.1437862557.1661841695-1317742238.1661167617) and [App Protect security updates signing key](https://cs.nginx.com/static/keys/app-protect-security-updates.key?_ga=2.189873707.1437862557.1661841695-1317742238.1661167617):
 
 ```console
-./auto/configure --sbin-path=/usr/local/nginx/nginx --conf-path=/usr/local/nginx/nginx.conf --pid-path=/usr/local/nginx/nginx.pid --with-http_ssl_module --with-pcre=../pcre2-10.39 --with-zlib=../zlib-1.2.11
+wget -qO - https://cs.nginx.com/static/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+wget -qO - https://cs.nginx.com/static/keys/app-protect-security-updates.key | gpg --dearmor | sudo tee /usr/share/keyrings/app-protect-security-updates.gpg >/dev/null
 ```
-There are many configuration options available in NGINX, you can use it as per your need. To find all the configuration options available in NGINX check [here](http://nginx.org/en/docs/configure.html).
-
-After configuration, nginx is compiled and installed using make:
+* Add the NGINX Plus repository:
 
 ```console
-make
-make install
+printf "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] https://pkgs.nginx.com/plus/ubuntu `lsb_release -cs` nginx-plus\n" | sudo tee /etc/apt/sources.list.d/nginx-plus.list
 ```
 
-* Now set Nignix in your path:
+* Download the nginx-plus apt configuration to /etc/apt/apt.conf.d:
 
 ```console
-export PATH=/usr/local/nginx:$PATH
+sudo wget -P /etc/apt/apt.conf.d https://cs.nginx.com/static/files/90pkgs-nginx
 ```
 
-* To verify if Nignix is insatlled or not check the Nignix version by using the command :
+* Update the repository information:
+
+```console
+sudo apt-get update
+```
+
+* Install the nginx-plus package:
+
+```console
+sudo apt-get install -y nginx-plus
+```
+
+* Check the nginx binary version to ensure that you have NGINX Plus installed correctly:
 
 ```console
 nginx -v
