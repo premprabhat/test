@@ -12,6 +12,7 @@ description: >
 ## Pre-requisites
 
 * An Amazon Web Services(AWS) account.
+* Install Nginx either from [source](/Build_from_source.md) or [package](Install_from_package.md)
 
 ## Build Nginx from source
 
