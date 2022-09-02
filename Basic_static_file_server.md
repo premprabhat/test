@@ -92,10 +92,10 @@ server {
  ssl_certificate_key /etc/nginx/ssl/ecdsa.key;
  ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384;
  location / {
- limit_except GET {
- deny all;
- }
- try_files $uri $uri/ =404;
+     limit_except GET {
+         deny all;
+     }
+     try_files $uri $uri/ =404;
  }
 }
 ```
