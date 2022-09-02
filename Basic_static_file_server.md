@@ -65,8 +65,7 @@ http {
  # Logging Settings
  ##
  access_log off;
- # error_log off will not turn off error logs. Error logs will
-redirect to /usr/share/nginx/off
+ # error_log off will not turn off error logs. Error logs will redirect to /usr/share/nginx/off
  # The below comes the closest to actually turning off error logs.
  error_log /dev/null crit;
  ##
