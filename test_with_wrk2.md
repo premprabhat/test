@@ -12,7 +12,7 @@ description: >
 ## Pre-requisites
 
 * An Amazon Web Services(AWS) account.
-* Create a [reverse proxy/API Gateway](/reverse_proxy.md)
+* Create a [reverse proxy/API Gateway](/reverse_proxy_and_API_gateway.md)
 * Create a [file server](/Basic_static_file_server.md)
 
 ## Build Nginx from source
