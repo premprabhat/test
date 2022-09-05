@@ -99,10 +99,20 @@ server {
  }
 }
 ```
-* To verify the file server is set run below:
+Here $hostname will be replaced by the IP of the machine.
+As ssl is on create a crt and key file. Follow the instruction given [here](/content/en/cloud/clair/#sections)
+
+* Check the configuration for correct syntax run and then start Nginx Server using below commands:
 
 ```console
-export PATH=/usr/local/nginx:$PATH
+nginx -t -v
+systemctl start nginx
+```
+
+* To verify the file server is running open the URL in your browser and now the content of your html file will be displayed:
+
+```console
+https://<IP>/
 ```
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
