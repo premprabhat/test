@@ -99,8 +99,9 @@ server {
  }
 }
 ```
-Here $hostname will be replaced by the IP of the machine.
-As ssl is on create a crt and key file. Follow the instruction given [here](/content/en/cloud/clair/#sections)
+Here $hostname will be replaced with the IP of the machine. 
+
+Follow the instructions to [create](/Create key_and_certification.md) ECDSA key and certificate
 
 * Check the configuration for correct syntax run and then start Nginx Server using below commands:
 
