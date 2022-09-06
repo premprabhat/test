@@ -101,7 +101,7 @@ server {
  ssl on;
  ssl_certificate /etc/nginx/ssl/ecdsa.crt;
  ssl_certificate_key /etc/nginx/ssl/ecdsa.key;
- ssl_ciphers “ECDHE-ECDSA-AES256-GCM-SHA384”;
+ ssl_ciphers ECDHE-ECDSA-AES256-GCM-SHA384;
  # API Gateway Path
  location ~ ^/api_old/.*$ {
  limit_except GET {
