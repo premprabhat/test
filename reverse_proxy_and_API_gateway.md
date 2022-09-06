@@ -13,6 +13,7 @@ description: >
 
 * An Amazon Web Services(AWS) account.
 * Install Nginx Plus. Steps can be found [here](/Install_nginx_plus.md)
+* Setup two [basic static file server](/Basic_static_file_server.md)
 
 ## Build Nginx from source
 
@@ -84,8 +85,8 @@ redirect to /usr/share/nginx/off
 ```console
 # Upstreams for https
 upstream ssl_file_server_com {
- server 192.168.97.128:443;
- server 192.168.97.31:443;
+ server <private_ip>:443;
+ server <private_ip>:443;
  keepalive 1024;
 }
 # JWT Authentication configs
@@ -125,6 +126,9 @@ server {
  }
 }
 ```
+Here $hostname will be replaced with the IP of the machine and private_ip is the private IP of the file servers
+
+Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate
 
 * To verify the reverse proxy and API gateway:
 
