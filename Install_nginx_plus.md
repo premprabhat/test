@@ -53,7 +53,6 @@ sudo apt-get install apt-transport-https lsb-release ca-certificates wget gnupg 
 
 ```console
 wget -qO - https://cs.nginx.com/static/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
-wget -qO - https://cs.nginx.com/static/keys/app-protect-security-updates.key | gpg --dearmor | sudo tee /usr/share/keyrings/app-protect-security-updates.gpg >/dev/null
 ```
 * Add the NGINX Plus repository:
 
