@@ -61,9 +61,11 @@ http {
  types_hash_max_size 2048;
  include /etc/nginx/mime.types;
  default_type application/octet-stream;
+ 
  ##
  # Logging Settings
  ##
+ 
  access_log off;
  # error_log off will not turn off error logs. Error logs will
 redirect to /usr/share/nginx/off
