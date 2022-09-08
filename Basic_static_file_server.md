@@ -99,9 +99,11 @@ server {
  }
 }
 ```
-Here $hostname will be replaced with the IP of the machine. 
+Here $hostname will be replaced with the IP of the machine.
 
-Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate
+Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate.
+
+NOTE: If you want you can change the content of your HTML file as per your choice.
 
 * Check the configuration for correct syntax run and then start Nginx Server using below commands:
 
