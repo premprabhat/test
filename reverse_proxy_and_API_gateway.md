@@ -125,14 +125,14 @@ server {
  }
 }
 ```
-Here $hostname will be replaced with the IP of the machine and private_ip is the private IP of the file servers
+Here $hostname will be replaced with the IP of the machine and private_ip is the private IP of the file servers.
 
 Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate
 
-* To verify the reverse proxy and API gateway:
+* To verify the file server is running open the URL in your browser and now the content of your html file which is present in your file server will be displayed:
 
 ```console
-export PATH=/usr/local/nginx:$PATH
+https://<IP>/
 ```
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
