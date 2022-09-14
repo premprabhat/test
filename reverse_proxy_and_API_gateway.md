@@ -17,7 +17,7 @@ description: >
 
 ## Build Nginx from source
 
-Using your AWS Account, launch an ARM 64-bit instance running with type M6g, size: 2XLarge and Ubuntu 18.04 AMI.
+Using your AWS Account, launch an ARM 64-bit instance running with type m6g.16xlarge and Ubuntu 18.04 AMI.
 
 Then follow [this documentation](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/guidelines-for-deploying-nginx-plus-on-aws.pdf) to setup Reverse Proxy and API Gateway.
 
