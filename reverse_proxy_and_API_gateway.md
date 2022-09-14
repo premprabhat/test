@@ -88,9 +88,7 @@ upstream ssl_file_server_com {
  server <private_ip>:443;
  keepalive 1024;
 }
-# JWT Authentication configs
-auth_jwt “Performance Test API”;
-auth_jwt_key_file /etc/nginx/jwk/server_jwt_keys.jwk;
+
 # HTTPS reverse proxy and API Gateway
 server {
  listen 443 ssl reuseport backlog=65535;
@@ -129,10 +127,24 @@ Here $hostname will be replaced with the IP of the machine and private_ip is the
 
 Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate
 
-* To verify the file server is running open the URL in your browser and now the content of your html file which is present in your file server will be displayed:
+* To verify the reverse proxy server is running open the URL in your browser and now the content of your html file which is present in your file server will be displayed:
 
 ```console
 https://<IP>/
+```
+
+* To verify the API gateway:
+
+Run the following commands on the upstreams to generate the files that will be served:
+```console
+# Create 1kb file in RP use case directory
+dd if=/dev/urandom of=/usr/share/nginx/html/1kb bs=1024 count=1
+```
+
+* Now open the URL in your browser and now the URL will be replaced:
+
+```console
+https://<IP>/api_old/1kb
 ```
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
