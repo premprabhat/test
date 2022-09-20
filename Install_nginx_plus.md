@@ -49,7 +49,7 @@ sudo cp nginx-repo.key /etc/ssl/nginx/
 sudo apt-get install apt-transport-https lsb-release ca-certificates wget gnupg ubuntu-keyring
 ```
 
-* Download and add [NGINX signing key](https://nginx.org/keys/nginx_signing.key?_ga=2.189873707.1437862557.1661841695-1317742238.1661167617) and [App Protect security updates signing key](https://cs.nginx.com/static/keys/app-protect-security-updates.key?_ga=2.189873707.1437862557.1661841695-1317742238.1661167617):
+* Download and add [NGINX signing key](https://nginx.org/keys/nginx_signing.key?_ga=2.189873707.1437862557.1661841695-1317742238.1661167617):
 
 ```console
 wget -qO - https://cs.nginx.com/static/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
