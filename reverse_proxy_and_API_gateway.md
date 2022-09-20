@@ -127,6 +127,13 @@ Here $hostname will be replaced with the IP of the machine and private_ip is the
 
 Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate
 
+* Check the configuration for correct syntax run and then start Nginx Server using below commands:
+
+```console
+nginx -t -v
+systemctl start nginx
+```
+
 * To verify the reverse proxy server is running open the URL in your browser and now the content of your html file which is present in your file server will be displayed:
 
 ```console
