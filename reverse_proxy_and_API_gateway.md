@@ -146,6 +146,9 @@ Run the following commands on the upstreams to generate the files that will be s
 ```console
 # Create 1kb file in RP use case directory
 dd if=/dev/urandom of=/usr/share/nginx/html/1kb bs=1024 count=1
+# Copy files into the APIGW use case directory
+mkdir -p /usr/share/nginx/html/api_new
+cp /usr/share/nginx/html/1kb /usr/share/nginx/html/api_new
 ```
 
 * Now open the URL in your browser and now the URL will be replaced:
