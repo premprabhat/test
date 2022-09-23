@@ -11,7 +11,7 @@ description: >
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
+* Physical machines or cloud nodes with Ubuntu installed.
 * Setup two [basic static file server(Upstreams)](/Basic_static_file_server.md)
 * Setup a [Reverse Proxy and API gateway(RP/APIGW)](/reverse_proxy_and_API_gateway.md)
 
