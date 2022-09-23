@@ -83,7 +83,7 @@ http {
 ```console
 # HTTPS file server
 server {
- listen 443 ssl reuseport backlog=65535;
+ listen 443 ssl reuseport backlog=60999;
  root /usr/share/nginx/html;
  index index.html index.htm;
  server_name $hostname;
