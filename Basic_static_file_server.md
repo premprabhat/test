@@ -3,7 +3,7 @@ processors : ["Neoverse-N1"]
 software : ["linux"]
 title: "Setup Basic static file server"
 type: docs
-weight: 4
+weight: 3
 hide_summary: true
 description: >
     Learn how to setup Basic static file server.
