@@ -1,17 +1,17 @@
 ---
-title: "Install Nginx on the ARM64 Ubuntu AWS instance and testing it" 
+title: "Install Nginx on the ARM64 Ubuntu instance and setting up basic file server, reverse proxy and API gateway and example to wget a file from server and curl to retrieve a static webpage"
 type: docs
 hide_summary: true
 weight: 2
 description: >
-    Learning path for software developers about how to install, setup a basice file server, reverse proxy and an API gateway and test with wrk2 on ARM64 AWS instance.
+    Learning path for software developers about how to install, setup a basic file server, reverse proxy and an API gateway and example to wget a file from server and curl to retrieve a static webpage on ARM64 instance.
 ---
 
 ## Learning Objectives 
 
 By the end of this learning path, you will be able to:
 
-* Install and run Nginx on your 64-bit Arm AWS EC2 instance
+* Install and run Nginx on your 64-bit Arm instance
 * Setup basic static file server, setup a reverse proxy and an API gateway
 * Example to wget a file from server and curl to retrieve a static webpage
 
