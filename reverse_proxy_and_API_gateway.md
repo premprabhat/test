@@ -13,7 +13,7 @@ description: >
 
 * Physical machines or cloud nodes with Ubuntu installed.
 * Install Nginx Plus. Steps can be found [here](/Install_nginx_plus.md)
-* Setup two [basic static file server(upstreams)](/Basic_static_file_server.md)
+* Setup two [basic static file server](/Basic_static_file_server.md)
 
 ## Setup Reverse Proxy and API Gateway
 
