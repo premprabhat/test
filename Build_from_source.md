@@ -11,17 +11,15 @@ description: >
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
-* Install wget, unzip, mercurial using command 
+* Physical machines or cloud nodes with Ubuntu installed.
+* Install wget, unzip, mercurial using command
 ```console
 apt-get install wget unzip mercurial -y
 ```
 
 ## Build Nginx from source
 
-Using your AWS Account, launch an ARM 64-bit instance running Ubuntu.
-
-Then follow [this documentation](http://nginx.org/en/docs/configure.html) to build Nginx from source.
+Follow [this documentation](http://nginx.org/en/docs/configure.html) to build Nginx from source.
 
 ### Steps in brief
 
