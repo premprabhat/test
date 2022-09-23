@@ -99,7 +99,7 @@ server {
  }
 }
 ```
-Here $hostname will be replaced with the IP of the machine.
+Here $hostname will be replaced with the DNS of the machine.
 
 Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate.
 
