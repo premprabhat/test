@@ -27,6 +27,12 @@ cat > /usr/share/nginx/html/file.txt
 Hi this a text file //Write the content in the file
 ```
 
+* If the nginx was running before file creation then restart it on upstreams and RP/APIGW using the command:
+
+```console
+systemctl restart nginx
+```
+
 * Now to wget run the following command in reverse Proxy and API gateway instance:
 
 ```console
@@ -43,6 +49,6 @@ wget https://<ip_dns>/<file_name> --no-check-certificate
 curl -k https://<ip_dns>/index.html
 ```
 
-NOTE: If you want you can create a new file in /usr/share/nginx/html folder in upstream instances.
+NOTE: If you want you can create a new file in /usr/share/nginx/html folder in upstream instances. Then restart the nginx on upstreams and RP/APIGW if running before file creation
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
