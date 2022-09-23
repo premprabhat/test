@@ -17,7 +17,7 @@ description: >
 
 ## Setup Reverse Proxy and API Gateway
 
-Follow [this documentation](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/guidelines-for-deploying-nginx-plus-on-aws.pdf) to setup Reverse Proxy and API Gateway.
+Follow [this documentation](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/guidelines-for-deploying-nginx-plus-on-aws.pdf) to setup Reverse Proxy and API Gateway(RP/APIGW).
 
 ### Steps in brief
 
