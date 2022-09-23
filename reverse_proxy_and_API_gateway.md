@@ -141,6 +141,7 @@ systemctl start nginx
 ```console
 https://<IP>/
 ```
+Here IP is the DNS name of the host
 
 * To verify the API gateway:
 
@@ -158,5 +159,6 @@ cp /usr/share/nginx/html/1kb /usr/share/nginx/html/api_new
 ```console
 https://<IP>/api_old/1kb
 ```
+Here IP is the DNS name of the host
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
