@@ -11,18 +11,22 @@ description: >
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
+* Physical machines or cloud nodes with Ubuntu installed.
 * Install Nginx either from [source](/Build_from_source.md) or [package](Install_from_package.md)
 
 ## Build Nginx from source
-
-Using your AWS Account, launch an ARM 64-bit instance with type m6g.16xlarge and Ubuntu 18.04 AMI.
 
 Then follow [this documentation](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/guidelines-for-deploying-nginx-plus-on-aws.pdf) to setup Basic static file server.
 
 ### Steps in brief
 
 NOTE: The below mentioned steps are used to setup Basic static file server.
+
+*  Switch to root user:
+
+```console
+sudo su -
+```
 
 *  Set the below parameters:
 
