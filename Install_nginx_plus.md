@@ -11,7 +11,7 @@ description: >
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
+* Physical machines or cloud nodes with Ubuntu installed.
 * An NGINX Plus subscription (purchased or trial)
 * root privilege
 * Your credentials to the [MyF5 Customer Portal](https://account.f5.com/myf5), provided by email from F5, Inc.
@@ -19,9 +19,7 @@ description: >
 
 ## Install Nginx Plus
 
-Using your AWS Account, launch an ARM 64-bit instance running Ubuntu.
-
-Then follow [this documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-plus/) to install Nginx Plus.
+Follow [this documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-plus/) to install Nginx Plus.
 
 ### Steps in brief
 
@@ -31,7 +29,6 @@ NOTE: The below mentioned steps are used to install Nginx Plus.
 
 ```console
 sudo mkdir /etc/ssl/nginx
-cd /etc/ssl/nginx
 ```
 
 * Log in to MyF5 Customer Portal and download your nginx-repo.crt and nginx-repo.key files.
