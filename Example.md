@@ -3,7 +3,7 @@ processors : ["Neoverse-N1"]
 software : ["linux"]
 title: "Example to wget a file from server and curl to retrieve a static webpage"
 type: docs
-weight: 4
+weight: 5
 hide_summary: true
 description: >
     Learn how to wget a file from server and curl to retrieve a static webpage.
