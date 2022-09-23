@@ -11,13 +11,11 @@ description: >
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
+* Physical machines or cloud nodes with Ubuntu installed.
 
 ## Install Nginx from package
 
-Using your AWS Account, launch an ARM 64-bit instance running Ubuntu.
-
-Then follow [this documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#installing-a-prebuilt-ubuntu-package-from-an-ubuntu-repository) to install Nginx from package.
+Follow [this documentation](https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#installing-a-prebuilt-ubuntu-package-from-an-ubuntu-repository) to install Nginx from package.
 
 ### Steps in brief
 
