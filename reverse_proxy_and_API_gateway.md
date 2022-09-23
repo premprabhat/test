@@ -11,19 +11,24 @@ description: >
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
+* Physical machines or cloud nodes with Ubuntu installed.
 * Install Nginx Plus. Steps can be found [here](/Install_nginx_plus.md)
-* Setup two [basic static file server](/Basic_static_file_server.md)
+* Setup two [basic static file server(upstreams)](/Basic_static_file_server.md)
 
-## Build Nginx from source
+## Setup Reverse Proxy and API Gateway
 
-Using your AWS Account, launch an ARM 64-bit instance running with type m6g.16xlarge and Ubuntu 18.04 AMI.
-
-Then follow [this documentation](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/guidelines-for-deploying-nginx-plus-on-aws.pdf) to setup Reverse Proxy and API Gateway.
+Follow [this documentation](https://armkeil.blob.core.windows.net/developer/Files/pdf/white-paper/guidelines-for-deploying-nginx-plus-on-aws.pdf) to setup Reverse Proxy and API Gateway.
 
 ### Steps in brief
 
 NOTE: The below mentioned steps are used to setup Reverse Proxy and API Gateway.
+
+
+* Switch to root user:
+
+```console
+sudo su -
+```
 
 * Set the below parameters:
 
@@ -123,7 +128,7 @@ server {
  }
 }
 ```
-Here $hostname will be replaced with the IP of the machine and private_ip is the private IP of the file servers.
+Here $hostname will be replaced with the DNS of the machine and private_ip is the private IP of the file servers.
 
 Follow the instructions to [create](/key_and_certification.md) ECDSA key and certificate
 
