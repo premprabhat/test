@@ -31,13 +31,9 @@ sudo su -
 *  Set the below parameters:
 
 ```console
-sysctl net.ipv4.ip_local_port_range=”1024 65535”
-sysctl net.ipv4.tcp_max_syn_backlog=65535
-sysctl net.core.rmem_max=8388607
-sysctl net.core.wmem_max=8388607
-sysctl net.ipv4.tcp_rmem=”4096 8388607 8388607”
-sysctl net.ipv4.tcp_wmem=”4096 8388607 8388607”
-sysctl net.core.somaxconn=65535
+sysctl net.ipv4.ip_local_port_range=”32768 60999”
+sysctl net.ipv4.tcp_max_syn_backlog=60999
+sysctl net.core.somaxconn=60999
 sysctl net.ipv4.tcp_autocorking=0
 ```
 
