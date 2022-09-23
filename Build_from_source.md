@@ -3,7 +3,7 @@ processors : ["Neoverse-N1"]
 software : ["linux"]
 title: "Build Nginx from source"
 type: docs
-weight: 4
+weight: 2
 hide_summary: true
 description: >
     Learn how to build Nginx from source.
