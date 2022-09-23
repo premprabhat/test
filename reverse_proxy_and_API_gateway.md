@@ -13,7 +13,8 @@ description: >
 
 * Physical machines or cloud nodes with Ubuntu installed.
 * Install Nginx Plus. Steps can be found [here](/Install_nginx_plus.md)
-* Setup two [basic static file server](/Basic_static_file_server.md)
+* Setup a [basic static file server](/Basic_static_file_server.md)
+NOTE: Here I have created 2 basic static file server. You can create as many as per your requirement.
 
 ## Setup Reverse Proxy and API Gateway
 
@@ -32,13 +33,9 @@ sudo su -
 * Set the below parameters:
 
 ```console
-sysctl net.ipv4.ip_local_port_range=”1024 65535”
-sysctl net.ipv4.tcp_max_syn_backlog=65535
-sysctl net.core.rmem_max=8388607
-sysctl net.core.wmem_max=8388607
-sysctl net.ipv4.tcp_rmem=”4096 8388607 8388607”
-sysctl net.ipv4.tcp_wmem=”4096 8388607 8388607”
-sysctl net.core.somaxconn=65535
+sysctl net.ipv4.ip_local_port_range=”32768 60999”
+sysctl net.ipv4.tcp_max_syn_backlog=60999
+sysctl net.core.somaxconn=60999
 sysctl net.ipv4.tcp_autocorking=0
 ```
 
