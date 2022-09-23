@@ -11,14 +11,12 @@ description: >
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
+* Physical machines or cloud nodes with Ubuntu installed.
 * Install Nginx from [package](/Install_from_package.md) or [source](/Build_from_source.md).
 
 ## Create ECDSA key and certificate
 
-Using your AWS Account, launch an ARM 64-bit instance running with type M5.16XLarge and Ubuntu 18.04 AMI.
-
-Then follow [this documentation](https://www.arm.com/-/media/global/solutions/infrastructure/NGINX_A1%20whitepaper.pdf) create ECDSA key and certificate.
+Follow [this documentation](https://www.arm.com/-/media/global/solutions/infrastructure/NGINX_A1%20whitepaper.pdf) create ECDSA key and certificate.
 
 ### Steps in brief
 
