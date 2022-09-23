@@ -14,6 +14,7 @@ description: >
 * Physical machines or cloud nodes with Ubuntu installed.
 * Install Nginx Plus. Steps can be found [here](/Install_nginx_plus.md)
 * Setup a [basic static file server](/Basic_static_file_server.md)
+
 NOTE: Here I have created 2 basic static file server. You can create as many as per your requirement.
 
 ## Setup Reverse Proxy and API Gateway
