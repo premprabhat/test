@@ -35,9 +35,9 @@ mkdir /etc/nginx/ssl/
 openssl ecparam -out ecdsa.key -name prime256v1 -genkey
 openssl req -new -sha256 -key ecdsa.key -out server.csr
 openssl x509 -req -sha256 -days 365 -in server.csr -signkey ecdsa.key -out ecdsa.crt
-cp ecdsa.key /etc/nginx/ssl/ecdsa.key 
+cp ecdsa.key /etc/nginx/ssl/ecdsa.key
 cp ecdsa.crt /etc/nginx/ssl/ecdsa.crt
 ```
-On the option named COMMON_NAME, you need to enter the IP address or hostname.
+On the option named COMMON_NAME, you need to enter the IP address or DNS name.
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
