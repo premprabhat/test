@@ -12,13 +12,12 @@ description: >
 By the end of this learning path, you will be able to:
 
 * Install and run Nginx on your 64-bit Arm AWS EC2 instance
-* Setup basic static file server, setup a reverse proxy and an API gateway.
-* Run a test with wrk2
+* Setup basic static file server, setup a reverse proxy and an API gateway
+* Example to wget a file from server and curl to retrieve a static webpage
 
 ## Pre-requisites
 
-* An Amazon Web Services(AWS) account.
-* Some familiarity with launching and running EC2 instances in AWS is helpful but not necessary.
+* Physical machines or cloud nodes with Ubuntu installed.
 
 ## Sections
 
