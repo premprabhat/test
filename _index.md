@@ -33,21 +33,19 @@ By the end of this learning path, you will be able to:
 
 |          Type | Content                       |
 | ---           | ---                                 |
-| How-To        | [Setup basic static file server](/content/en/cloud/clair/distributed_clair.md)
-| How-To        | [Setup a reverse proxy](/content/en/cloud/clair/vulnerability_report.md)
-| How-To        | [Setup an API gateway](/content/en/cloud/clair/distributed_clair.md) |
+| How-To        | [Setup basic static file server](/Basic_static_file_server.md)
+| How-To        | [Setup a reverse proxy and API Gateway](/reverse_proxy_and_API_gateway.md)
 
 ## Section 3
 
 |          Type | Content                       |
 | ---           | ---                                 |
-| How-To        | [Run a test with wrk2](/content/en/cloud/clair/clair.md) |
+| How-To        | [wget a file from server and curl to retrieve a static webpage](/Example.md) |
 
 ## References and Documentation
 
 | Type          | Content             |
 | ---           | ---                 |
-| Documentation | [Creating an AWS account](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-creating.html) |
 | Documentation | [Nginx Documentation](http://nginx.org/en/docs/) |
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
