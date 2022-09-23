@@ -3,7 +3,7 @@ processors : ["Neoverse-N1"]
 software : ["linux"]
 title: "Install Nginx from package"
 type: docs
-weight: 4
+weight: 1
 hide_summary: true
 description: >
     Learn how to install Nginx from package.
