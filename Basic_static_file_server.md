@@ -20,7 +20,7 @@ Then follow [this documentation](https://armkeil.blob.core.windows.net/developer
 
 ### Steps in brief
 
-NOTE: The below mentioned steps are used to setup Basic static file server.
+NOTE: The below mentioned steps are used to setup Basic static file server(upstreams).
 
 *  Switch to root user:
 
