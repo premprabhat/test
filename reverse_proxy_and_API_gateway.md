@@ -21,8 +21,7 @@ Follow [this documentation](https://armkeil.blob.core.windows.net/developer/File
 
 ### Steps in brief
 
-NOTE: The below mentioned steps are used to setup Reverse Proxy and API Gateway.
-
+NOTE: The below mentioned steps are used to setup Reverse Proxy and API Gateway(RP/APIGW).
 
 * Switch to root user:
 
