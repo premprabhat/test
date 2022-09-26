@@ -11,7 +11,7 @@ description: >
 
 ## Pre-requisites
 
-* Physical machines or cloud nodes with Ubuntu installed.
+* Physical machines or cloud nodes with Ubuntu installed(Client instance).
 * Setup two [basic static file server(Upstreams)](/Basic_static_file_server.md)
 * Setup a [Reverse Proxy and API gateway(RP/APIGW)](/reverse_proxy_and_API_gateway.md)
 
@@ -33,22 +33,26 @@ Hi this a text file //Write the content in the file
 systemctl restart nginx
 ```
 
-* Now to wget run the following command in reverse Proxy and API gateway instance:
+* Now to wget run the following command in client instance:
 
 ```console
 wget https://<ip_dns>/<file_name> --no-check-certificate
 ```
 
+Here ip_dns is the DNS of the RP/APIGW instance.
+
 ## To curl to retrieve a static webpage.
 
 ### Steps in brief
 
-* In my upstreams there is already a file name index.html so run the following command in reverse Proxy and API gateway instance:
+* As we have created upstreams there will be already a file name index.html. Now run the following command in client instance:
 
 ```console
 curl -k https://<ip_dns>/index.html
 ```
 
-NOTE: If you want you can create a new file in /usr/share/nginx/html folder in upstream instances. Then restart the nginx on upstreams and RP/APIGW if running before file creation
+Here ip_dns is the DNS of the RP/APIGW instance.
+
+NOTE: If you want you can create a new html file in /usr/share/nginx/html folder in upstream instances. Then restart the nginx on upstreams and RP/APIGW if running before file creation
 
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
