@@ -3,7 +3,7 @@ processors : ["Neoverse-N1"]
 software : ["linux"]
 title: "Install Nginx Plus"
 type: docs
-weight: 4
+weight: 7
 hide_summary: true
 description: >
     Learn how to install Nginx Plus.
@@ -11,9 +11,8 @@ description: >
 
 ## Pre-requisites
 
-* Physical machines or cloud nodes with Ubuntu installed.
-* An NGINX Plus subscription (purchased or trial)
-* root privilege
+* An NGINX Plus subscription (purchased or trial).
+* root privilege.
 * Your credentials to the [MyF5 Customer Portal](https://account.f5.com/myf5), provided by email from F5, Inc.
 * Your NGINX Plus certificate and public key (nginx-repo.crt and nginx-repo.key files), provided by email from F5, Inc.
 
@@ -81,4 +80,4 @@ sudo apt-get install -y nginx-plus
 nginx -v
 ```
 
-[<-- Return to Learning Path](/content/en/cloud/clair/#sections)
+[<-- Return to Learning Path](/content/en/cloud/nginx/#sections)
