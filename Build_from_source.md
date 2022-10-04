@@ -78,4 +78,31 @@ export PATH=/usr/local/nginx:$PATH
 nginx -v
 ```
 
+* Now add that systemd service. To enable the service, we're going to have to add a small script for that create a file named /lib/systemd/system/nginx.service and paste the below script:
+
+```console
+[Unit]
+Description=The NGINX HTTP and reverse proxy server
+After=syslog.target network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+        
+[Service]
+Type=forking
+PIDFile=/usr/local/nginx/nginx.pid
+ExecStartPre=/usr/local/nginx/nginx -t
+ExecStart=/usr/local/nginx/nginx
+ExecReload=/usr/local/nginx/nginx -s reload
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+        
+[Install]
+WantedBy=multi-user.target
+```
+
+* Start your NGINX by using systemd with this command:
+
+```console
+systemctl start nginx
+```
+
 [<-- Return to Learning Path](/content/en/cloud/clair/#sections)
