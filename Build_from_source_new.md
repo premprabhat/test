@@ -55,7 +55,7 @@ apt-get install gcc libssl-dev make -y
 * The Build is configured using configure command. It defines various aspects of the system, including the methods nginx is allowed to use for connection processing. At the end it creates a Makefile.
 
 ```console
-./auto/configure --prefix=/var/www/html --sbin-path=/usr/sbin/nginx --conf-path=/etc/nginx/nginx.conf --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/var/run/nginx.pid --with-http_ssl_module --modules-path=/etc/nginx/modules --with-stream=dynamic --with-pcre=../pcre2-10.39 --with-zlib=../zlib-1.2.11
+./auto/configure --prefix=/var/www/html --sbin-path=/usr/sbin/nginx --http-log-path=/var/log/nginx/access.log --error-log-path=/var/log/nginx/error.log --lock-path=/var/lock/nginx.lock --pid-path=/var/run/nginx.pid --with-http_ssl_module --modules-path=/etc/nginx/modules --with-stream=dynamic --with-pcre=../pcre2-10.39 --with-zlib=../zlib-1.2.11
 ```
 There are many configuration options available in NGINX, you can use it as per your need. To find all the configuration options available in NGINX check [here](http://nginx.org/en/docs/configure.html).
 
